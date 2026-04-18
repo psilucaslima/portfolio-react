@@ -27,15 +27,8 @@ function App() {
         { nome: "Psicologia Escolar Educacional no Piauí", link: "https://periodicorease.pro.br/rease/article/view/24110" },
         { nome: "O impacto do TDAH na vida adulta", link: "https://periodicorease.pro.br/rease/article/view/15094" },
         { nome: "Ambiente escolar capacitista e TEA", link: "https://ojs.revistacontemporanea.com/ojs/index.php/home/article/view/7378" },
-        { nome: "A exclusão dos docentes na inclusão", link: "https://ojs.revistacontemporanea.com/ojs/index.php/home/article/view/7314" },
-        { nome: "Desafios da inclusão escolar", link: "https://ojs.revistacontemporanea.com/ojs/index.php/home/article/view/5789" },
-      ] 
-    },
-    {
-      titulo: "Psicopedagogia na Escola",
-      descricao: "O trabalho do psicopedagogo rumo ao avançado.",
-      arquivos: [ 
-        { nome: "Giroteca: incentivo à leitura", link: "documentos/Giroteca.pdf" }
+        { nome: "Exclusão docente e inclusão", link: "https://ojs.revistacontemporanea.com/ojs/index.php/home/article/view/7314" },
+        { nome: "Desafios da inclusão escolar - TEA", link: "https://ojs.revistacontemporanea.com/ojs/index.php/home/article/view/5789" },
       ] 
     }
   ];
@@ -43,37 +36,66 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Me. Lucas Lima Ribeiro</h1>
-        <p>Psicólogo | Professor | Psicopedagogo</p>
+        <h1>Psicólogo e Professor Me. Lucas Lima Ribeiro</h1>
       </header>
 
-      <section className="formacao">
-        <h2>Formação</h2>
-        <ul>
-          <li>Mestre em Ciências do Comportamento (UnB)</li>
-          <li>Psicólogo (UESPI)</li>
-          <li>Especialista em Psicopedagogia clínica e institucional</li>
-        </ul>
+      <section className="container">
+        <div className="sobre-content">
+          {/* A imagem deve estar dentro da pasta public */}
+          <img src="/lucasminhafoto.jpeg" alt="Foto de Lucas Lima" className="perfil-foto" />
+
+          <div className="curriculo-texto">
+            <h2>Currículo</h2>
+            
+            <h3 className="nome-secao">Formação:</h3>
+            <ul>
+                <li>Bacharel, Licenciado e Formado em Psicologia (UESPI).</li>
+                <li>Mestre em Ciências do Comportamento (UnB).</li>
+                <li>Especialista em Psicopedagogia Clínica e Institucional.</li>
+                <li>Graduando em Sistemas para Internet (UESPI) e Pedagogia (Unifahe).</li>
+            </ul>
+
+            <h3 className="nome-secao">Atuação:</h3>
+            <ul>
+                <li>Psicopedagogo na Secretaria Municipal de Educação de Teresina (SEMEC).</li>
+                <li>Professor Temporário na UESPI e Professor na FAESPI.</li>
+            </ul>
+
+            <h3 className="nome-secao">Experiência:</h3>
+            <ul>
+                <li>Ex-Coordenador do Curso de Psicologia (FAESPI).</li>
+                <li>Integrante do Núcleo de Acessibilidade da UEMA.</li>
+                <li>Experiência como Acompanhante Terapêutico (AT).</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <section className="container-projetos">
+      <section className="container">
         <h2>Portfólio de Projetos e Extensão</h2>
-        {projetos.map((projeto, index) => (
-          <div key={index} className="card">
-            <h3>{projeto.titulo}</h3>
-            <p>{projeto.descricao}</p>
-            <div className="grid-botoes">
-              {projeto.arquivos.map((arq, idx) => (
-                <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="btn-link">
-                  {arq.nome}
-                </a>
-              ))}
+        <div className="lista-projetos">
+          {projetos.map((projeto, index) => (
+            <div key={index} className="card">
+              <h3>{projeto.titulo}</h3>
+              <p>{projeto.descricao}</p>
+              <div className="pdf-grid">
+                {projeto.arquivos.map((arq, idx) => (
+                  <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="btn-pdf">
+                    {arq.nome}
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
+
+      <footer>
+         <p>© 2026 - Me. Lucas Lima Ribeiro</p>
+         <p>Psicólogo (CRP21/04438), Psicopedagogo e Professor</p>
+      </footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
