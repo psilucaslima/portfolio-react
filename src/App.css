@@ -1,96 +1,44 @@
-:root {
-  --green: #00FF7F;
-  --bg: #0a0a0a;
-  --bg-alt: #121212;
-  --text: #ffffff;
-  --text-dim: #b0b0b0;
-}
+:root { --primary: #00FF7F; --bg: #000; --bg-alt: #111; }
+body { margin: 0; background-color: var(--bg); color: #fff; font-family: sans-serif; }
 
-body {
-  margin: 0; background-color: var(--bg); color: var(--text);
-  font-family: 'Segoe UI', sans-serif; overflow-x: hidden;
-}
-
-/* NAVBAR EXPANDIDA */
 .navbar {
   position: sticky; top: 0; background: rgba(0,0,0,0.95);
-  border-bottom: 2px solid var(--green); z-index: 1000; padding: 15px 0;
+  border-bottom: 2px solid var(--primary); z-index: 1000; padding: 15px 0;
 }
-.nav-container-full {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 0 5%; /* Expandido para as bordas */
-}
-.nav-menu { display: flex; gap: 20px; }
+.nav-container-full { display: flex; justify-content: space-between; align-items: center; padding: 0 4%; }
+.nav-menu { display: flex; gap: 15px; }
 .nav-menu a {
-  text-decoration: none; color: var(--green); font-weight: bold;
-  padding: 8px 20px; border: 1px solid var(--green); border-radius: 4px; transition: 0.3s;
+  text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.8rem;
+  padding: 8px 18px; border: 1px solid var(--primary); border-radius: 4px;
 }
-.nav-menu a:hover { background: var(--green); color: #000; }
 
-/* SEÇÕES QUE OCUPAM A TELA */
-.section-expanded { padding: 80px 5%; border-bottom: 1px solid #222; }
+.section-full { padding: 60px 4%; border-bottom: 1px solid #222; }
 .bg-darker { background-color: #050505; }
-.content-wrapper { width: 100%; margin: 0 auto; }
+.hero-layout { display: flex; gap: 50px; align-items: flex-start; }
+.perfil-foto { width: 250px; height: 250px; border-radius: 20px; border: 4px solid var(--primary); object-fit: cover; }
+.cv-grid-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
 
-/* LAYOUT DO TOPO */
-.hero-layout { display: flex; gap: 60px; align-items: flex-start; }
-.hero-img {
-  width: 280px; height: 280px; border-radius: 20px;
-  border: 4px solid var(--green); object-fit: cover;
-}
-.hero-info-side { flex: 1; }
-.cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+.text-green { color: var(--primary); text-transform: uppercase; }
+.sub-title { font-size: 0.85rem; color: var(--primary); opacity: 0.8; margin-bottom: 8px; }
+ul { list-style: none; padding: 0; margin: 0; }
+li { color: #ccc; font-size: 0.9rem; margin-bottom: 5px; line-height: 1.4; }
+.cv-full-row { margin-top: 25px; border-top: 1px solid #222; padding-top: 15px; }
+.cv-full-row p { color: #ccc; font-size: 0.9rem; line-height: 1.6; }
 
-.title-green { color: var(--green); text-transform: uppercase; margin-bottom: 20px; }
-.title-green.central { text-align: center; }
+.side-by-side-container { display: flex; gap: 40px; margin-top: 40px; }
+.column-box { flex: 1; }
+.buttons-grid-small { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.btn-small-link { border: 1px solid #333; color: #aaa; text-decoration: none; padding: 10px; border-radius: 4px; font-size: 0.8rem; text-align: center; transition: 0.3s; }
+.btn-small-link:hover { border-color: var(--primary); color: var(--primary); }
 
-.cv-item h3 { font-size: 0.9rem; color: var(--green); margin-bottom: 10px; opacity: 0.8; }
-.cv-item ul { list-style: none; padding: 0; margin: 0; }
-.cv-item li { color: var(--text-dim); margin-bottom: 8px; font-size: 0.95rem; line-height: 1.4; }
-.disciplinas-text { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; text-align: justify; }
+.article-card-link { display: block; background: #151515; padding: 15px; margin-bottom: 10px; text-decoration: none; color: #fff; border-radius: 6px; border-left: 4px solid var(--primary); transition: 0.3s; font-size: 0.9rem; }
+.article-card-link:hover { transform: translateX(10px); background: #222; }
 
-/* PSICOPEDAGOGIA DESTAQUE */
-.full-width-card {
-  background: var(--bg-alt); padding: 40px; border-radius: 15px;
-  text-align: center; margin-bottom: 60px; border: 1px solid #222;
-}
+.card-top-destaque { background: var(--bg-alt); padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #222; }
+.btn-pdf-destaque { display: inline-block; padding: 12px 25px; background: var(--primary); color: #000; text-decoration: none; font-weight: bold; border-radius: 6px; margin-top: 15px; }
 
-/* LADO A LADO: EXTENSÃO E ARTIGOS */
-.split-layout { display: flex; gap: 40px; }
-.split-column { flex: 1; min-width: 300px; }
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2000; }
+.whatsapp-float img { width: 35px; }
+footer { padding: 40px; text-align: center; color: #666; font-size: 0.8rem; }
 
-.extension-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.extension-item {
-  background: transparent; border: 1px solid #333; color: var(--text-dim);
-  padding: 12px; text-decoration: none; border-radius: 6px; font-size: 0.85rem; transition: 0.3s;
-}
-.extension-item:hover { border-color: var(--green); color: var(--green); }
-
-.articles-column { display: flex; flex-direction: column; gap: 12px; }
-.article-box {
-  background: #1a1a1a; padding: 15px; border-radius: 8px; text-decoration: none;
-  color: white; border-left: 4px solid var(--green); transition: 0.3s;
-}
-.article-box:hover { background: #222; transform: translateX(10px); }
-
-.btn-main {
-  display: inline-block; padding: 15px 30px; background: var(--green);
-  color: #000; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 20px;
-}
-
-/* WHATSAPP FLOAT */
-.whatsapp-link {
-  position: fixed; bottom: 30px; right: 30px; background: #25d366;
-  width: 60px; height: 60px; border-radius: 50%; display: flex;
-  align-items: center; justify-content: center; z-index: 2000;
-}
-.whatsapp-link img { width: 35px; }
-
-footer { padding: 40px; text-align: center; border-top: 1px solid #222; color: #555; }
-
-/* RESPONSIVIDADE */
-@media (max-width: 1000px) {
-  .hero-layout, .split-layout { flex-direction: column; }
-  .cv-grid, .extension-list { grid-template-columns: 1fr; }
-  .hero-image-side { width: 100%; text-align: center; }
-}
+@media (max-width: 900px) { .hero-layout, .side-by-side-container { flex-direction: column; } .buttons-grid-small { grid-template-columns: 1fr; } }
