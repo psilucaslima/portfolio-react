@@ -1,61 +1,52 @@
-:root { --verde: #00FF7F; --fundo: #000; --quadro: #121212; }
+:root { --cor-verde: #00FF7F; --fundo: #000; --quadro: #111; }
 
-body { margin: 0; background: var(--fundo); color: #fff; font-family: 'Segoe UI', Arial, sans-serif; }
+body { margin: 0; background: var(--fundo); color: #fff; font-family: sans-serif; }
 
-/* CABEÇALHO LARGO */
-.navbar { position: sticky; top: 0; background: rgba(0,0,0,0.9); border-bottom: 2px solid var(--verde); z-index: 1000; padding: 15px 0; }
-.nav-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 0 5%; }
-.menu-topo { display: flex; gap: 15px; }
-.menu-topo a { text-decoration: none; color: var(--verde); border: 1px solid var(--verde); padding: 8px 15px; border-radius: 4px; font-weight: bold; transition: 0.3s; }
-.menu-topo a:hover { background: var(--verde); color: #000; }
+/* NAVBAR FIXA E ORGANIZADA */
+.navbar-fix { position: sticky; top: 0; background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--cor-verde); z-index: 1000; padding: 15px 0; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; width: 90%; margin: 0 auto; }
+.nav-btns { display: flex; gap: 15px; }
+.btn-nav { text-decoration: none; color: var(--cor-verde); border: 1px solid var(--cor-verde); padding: 8px 15px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; }
+.btn-nav.zap { background: var(--cor-verde); color: #000; }
 
-/* SEÇÕES */
-.secao-site { padding: 80px 5%; border-bottom: 1px solid #222; }
-.bg-preto-suave { background-color: #050505; }
+/* SEÇÕES QUE OCUPAM A TELA */
+.secao-master { padding: 60px 5%; width: 100%; box-sizing: border-box; }
+.bg-dark { background: #050505; }
 
-/* CURRÍCULO */
-.layout-horizontal { display: flex; gap: 50px; }
-.minha-foto { width: 280px; height: 280px; border-radius: 15px; border: 4px solid var(--verde); object-fit: cover; }
-.conteudo-box { flex: 1; }
-.cor-verde { color: var(--verde); text-transform: uppercase; margin-bottom: 20px; }
-.cor-verde.central { text-align: center; }
+/* GRID DO CURRÍCULO */
+.grid-sobre { display: flex; gap: 40px; }
+.foto-perfil { width: 250px; height: 250px; border-radius: 50%; border: 4px solid var(--cor-verde); object-fit: cover; }
+.cv-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.verde-destaque { color: var(--cor-verde); text-transform: uppercase; margin-bottom: 20px; }
+.verde-destaque.central { text-align: center; }
+h3 { color: var(--cor-verde); font-size: 1rem; margin-bottom: 10px; opacity: 0.9; }
+ul { list-style: none; padding: 0; }
+li { color: #ccc; font-size: 0.9rem; margin-bottom: 5px; line-height: 1.4; }
+.cv-bloco-largo p { color: #ccc; font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px; }
 
-.grade-curriculo { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-.rotulo { color: var(--verde); font-weight: bold; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 10px; display: block; }
-ul { list-style: none; padding: 0; margin: 0; }
-li { color: #ccc; font-size: 0.95rem; margin-bottom: 6px; line-height: 1.4; }
-.disciplinas-box { margin-top: 30px; border-top: 1px solid #333; padding-top: 20px; }
-.texto-simples { color: #ccc; line-height: 1.6; }
+/* LADO A LADO: PORTFÓLIO */
+.flex-lado-a-lado { display: flex; gap: 40px; margin-bottom: 50px; }
+.coluna-portfolio { flex: 1; }
 
-/* PORTFÓLIO LADO A LADO (QUADRINHOS) */
-.lado-a-lado { display: flex; gap: 40px; margin-bottom: 60px; }
-.coluna { flex: 1; min-width: 300px; }
-.desc-apoio { color: #888; font-size: 0.9rem; margin-bottom: 25px; }
+/* QUADRINHOS */
+.grade-quadrinhos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.quadrinho-link { background: #1a1a1a; border: 1px solid #333; color: #fff; text-decoration: none; padding: 10px; border-radius: 5px; font-size: 0.75rem; text-align: center; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+.quadrinho-link:hover { border-color: var(--cor-verde); }
 
-/* QUADRINHOS DA EXTENSÃO */
-.quadrinhos-extensao { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.card-pequeno { background: #1a1a1a; border: 1px solid #333; color: #fff; text-decoration: none; padding: 15px; border-radius: 8px; font-size: 0.8rem; text-align: center; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
-.card-pequeno:hover { border-color: var(--verde); color: var(--verde); }
+/* LISTA ARTIGOS */
+.lista-artigos { display: flex; flex-direction: column; gap: 10px; }
+.artigo-box { background: #1a1a1a; padding: 15px; border-radius: 8px; text-decoration: none; color: #fff; border-left: 4px solid var(--cor-verde); font-size: 0.85rem; }
 
-/* QUADRINHOS DOS ARTIGOS */
-.lista-artigos-vertical { display: flex; flex-direction: column; gap: 12px; }
-.card-artigo { background: #1a1a1a; padding: 18px; border-radius: 10px; text-decoration: none; color: #fff; border-left: 5px solid var(--verde); font-size: 0.9rem; transition: 0.3s; }
-.card-artigo:hover { background: #252525; transform: translateX(10px); }
+/* GIROTECA FINAL */
+.giroteca-footer { margin-top: 50px; padding-top: 30px; border-top: 1px solid #222; }
+.bloco-giroteca { background: var(--quadro); padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #333; }
+.btn-giroteca { display: inline-block; background: var(--cor-verde); color: #000; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 10px; }
 
-/* GIROTECA POR ÚLTIMO */
-.giroteca-secao { margin-top: 60px; padding-top: 40px; border-top: 1px solid #222; }
-.card-giroteca-final { background: var(--quadro); padding: 40px; border-radius: 15px; text-align: center; border: 1px solid #333; }
-.botao-giroteca { display: inline-block; background: var(--verde); color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 6px; margin-top: 20px; }
+footer { padding: 40px; text-align: center; color: #555; }
 
-/* WHATSAPP */
-.zap-flutuante { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-.zap-flutuante img { width: 38px; }
-
-footer { padding: 50px; text-align: center; color: #555; font-size: 0.85rem; }
-
-/* AJUSTE PARA CELULAR */
-@media (max-width: 1000px) {
-  .layout-horizontal, .lado-a-lado { flex-direction: column; }
-  .foto-box { text-align: center; }
-  .quadrinhos-extensao { grid-template-columns: 1fr; }
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .grid-sobre, .flex-lado-a-lado, .cv-info-grid { flex-direction: column; display: block; }
+  .foto-area { text-align: center; margin-bottom: 20px; }
+  .grade-quadrinhos { grid-template-columns: 1fr; }
 }
