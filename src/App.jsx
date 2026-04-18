@@ -41,114 +41,107 @@ function App() {
   return (
     <div className="App">
       <header className="navbar">
-        <div className="nav-container">
+        <div className="nav-container-full">
           <h1>Me. Lucas Lima Ribeiro</h1>
           <nav className="nav-menu">
-            <a href="#sobre">SOBRE</a>
-            <a href="#portfolio">PORTFÓLIO</a>
-            <a href="#artigos">ARTIGOS</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#portfolio">Portfólio</a>
           </nav>
         </div>
       </header>
 
-      {/* Botão Flutuante do WhatsApp */}
-      <a href="https://wa.me/5586999286646" target="_blank" rel="noreferrer" className="whatsapp-link">
+      <a href="https://wa.me/5586999286646" target="_blank" rel="noreferrer" className="whatsapp-float">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
       </a>
 
-      <section className="hero-section" id="sobre">
-        <div className="hero-content">
-          <div className="hero-image-wrapper">
-            <img src="/lucasminhafoto.jpeg" alt="Me. Lucas Lima Ribeiro" className="hero-img" />
+      <section className="section-full bg-darker" id="sobre">
+        <div className="hero-layout">
+          <div className="hero-image-box">
+            <img src="/lucasminhafoto.jpeg" alt="Lucas Lima Ribeiro" className="perfil-foto" />
           </div>
-          <div className="hero-text">
-            <h2 className="section-title">Currículo Profissional</h2>
-            
-            <div className="cv-block">
-              <h3>FORMAÇÃO:</h3>
-              <ul>
-                <li>Bacharel, Licenciado e Formado em Psicologia (UESPI).</li>
-                <li>Mestre em Ciências do Comportamento (UnB).</li>
-                <li>Especialista em Psicopedagogia Clínica e Institucional.</li>
-                <li>Graduando em Sistemas para Internet (UESPI) e Pedagogia (Unifahe).</li>
-              </ul>
-            </div>
-
-            <div className="cv-block">
-              <h3>ATUAÇÃO:</h3>
-              <ul>
-                <li>Psicopedagogo na Secretaria Municipal de Educação de Teresina (SEMEC).</li>
-                <li>Professor Temporário na UESPI e Professor na FAESPI.</li>
-                <li>Professor Psicólogo (CRP21/04438).</li>
-              </ul>
-            </div>
-
-            <div className="cv-block">
-              <h3>EXPERIÊNCIA:</h3>
-              <ul>
-                <li>Ex-Coordenador do Curso de Psicologia (FAESPI).</li>
-                <li>Integrante do Núcleo de Acessibilidade da UEMA.</li>
-                <li>Experiência como Acompanhante Terapêutico (AT).</li>
-              </ul>
-            </div>
-
-            <div className="cv-block">
-              <h3>GRUPOS DE ESTUDO:</h3>
-              <ul>
-                <li>Integrante do Núcleo de Estudos e Pesquisas em Psicologia do Desenvolvimento e Intervenções Humanas (NEPEX PSIDIHN).</li>
-              </ul>
-            </div>
-
-            <div className="cv-block">
-              <h3>DISCIPLINAS MINISTRADAS NAS ÁREAS:</h3>
-              <ul>
-                <li>Psicopatologia, Processos Grupais, Processos Psicológicos Básicos, Investigação Científica, Análise do Comportamento, Supervisão Clínica em Análise do Comportamento e Educação.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="portfolio-section" id="portfolio">
-        <div className="container">
-          <h2 className="section-title central">Portfólio de Projetos e Extensão</h2>
-          <div className="projects-grid">
-            {projetos.slice(0, 2).map((proj, i) => (
-              <div key={i} className="project-card">
-                <h3>{proj.titulo}</h3>
-                <p>{proj.descricao}</p>
-                <div className="links-area">
-                  {proj.arquivos.map((arq, idx) => (
-                    <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="btn-action">
-                      {arq.nome}
-                    </a>
-                  ))}
-                </div>
+          <div className="hero-content-box">
+            <h2 className="text-green">Currículo</h2>
+            <div className="cv-grid-top">
+              <div className="cv-column">
+                <h3 className="sub-title">Formação:</h3>
+                <ul>
+                  <li>Bacharel, Licenciado e Formado em Psicologia (UESPI).</li>
+                  <li>Mestre em Ciências do Comportamento (UnB).</li>
+                  <li>Especialista em Psicopedagogia Clínica e Institucional.</li>
+                  <li>Graduando em Sistemas para Internet (UESPI) e Pedagoga (Unifahe).</li>
+                </ul>
               </div>
-            ))}
+              <div className="cv-column">
+                <h3 className="sub-title">Atuação:</h3>
+                <ul>
+                  <li>Psicopedagogo na Secretaria Municipal de Educação de Teresina (SEMEC).</li>
+                  <li>Professor Temporário na UESPI e Professor na FAESPI.</li>
+                  <li>Professor Psicólogo (CRP21/04438).</li>
+                </ul>
+              </div>
+              <div className="cv-column">
+                <h3 className="sub-title">Experiência:</h3>
+                <ul>
+                  <li>Ex-Coordenador do Curso de Psicologia (FAESPI).</li>
+                  <li>Integrante do Núcleo de Acessibilidade da UEMA.</li>
+                  <li>Experiência como Acompanhante Terapêutico (AT).</li>
+                </ul>
+              </div>
+              <div className="cv-column">
+                <h3 className="sub-title">Grupos de estudo:</h3>
+                <ul>
+                  <li>Integrante do NEPEX PSIDIHN.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="cv-full-row">
+              <h3 className="sub-title">Disciplinas ministradas nas áreas:</h3>
+              <p>Psicopatologia, Processos Grupais, Processos Psicológicos Básicos, Investigação Científica, Análise do Comportamento, Supervisão Clínica em Análise do Comportamento e Educação.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="articles-section" id="artigos">
-        <div className="container">
-          <h2 className="section-title central">Artigos Científicos</h2>
-          <div className="articles-list">
-            {projetos[2].arquivos.map((arq, idx) => (
-              <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="article-item">
-                <span className="article-icon">📄</span>
-                <span className="article-name">{arq.nome}</span>
-              </a>
-            ))}
+      <section className="section-full" id="portfolio">
+        {/* LADO A LADO: EXTENSÃO E ARTIGOS NO TOPO DO PORTFÓLIO */}
+        <div className="side-by-side-container">
+          <div className="column-box">
+            <h2 className="text-green">Atividade de Extensão em Psicologia</h2>
+            <p className="desc-text">{projetos[1].descricao}</p>
+            <div className="buttons-grid-small">
+              {projetos[1].arquivos.map((arq, idx) => (
+                <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="btn-small-link">{arq.nome}</a>
+              ))}
+            </div>
+          </div>
+
+          <div className="column-box">
+            <h2 className="text-green">Artigos publicados</h2>
+            <p className="desc-text">{projetos[2].descricao}</p>
+            <div className="articles-vertical-list">
+              {projetos[2].arquivos.map((arq, idx) => (
+                <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="article-card-link">
+                  <span className="icon">📄</span> {arq.nome}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* PSICOPEDAGOGIA (GIROTECA) AGORA ABAIXO DE TUDO */}
+        <div className="full-width-block" style={{marginTop: '60px'}}>
+          <h2 className="text-green central">Psicopedagogia na Escola</h2>
+          <div className="card-top-destaque">
+            <p>{projetos[0].descricao}</p>
+            <a href={projetos[0].arquivos[0].link} target="_blank" rel="noreferrer" className="btn-pdf-destaque">
+              {projetos[0].arquivos[0].nome}
+            </a>
           </div>
         </div>
       </section>
 
       <footer>
-        <div className="container">
-          <p>© 2026 - Me. Lucas Lima Ribeiro</p>
-          <p className="footer-sub">Psicólogo (CRP21/04438), Psicopedagogo e Professor</p>
-        </div>
+        <p>© 2026 - Me. Lucas Lima Ribeiro | Psicólogo, Psicopedagogo e Professor</p>
       </footer>
     </div>
   )
