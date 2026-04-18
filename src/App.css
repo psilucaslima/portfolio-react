@@ -1,68 +1,160 @@
 :root {
   --verde: #00FF7F;
+  --fundo-card: #0a0a0a;
+}
+
+/* Rolagem suave e ajuste de altura para não cobrir o título */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 body {
   margin: 0;
   background-color: #000;
   color: #fff;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-.App {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
+/* CABEÇALHO COM MENU DE BOTÕES */
+.header-nav {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 20px 10px;
+  border-bottom: 2px solid var(--verde);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
-/* Foto e Texto lado a lado */
+.header-nav h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+/* TRANSFORMANDO LINKS EM BOTÕES */
+.menu {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--verde);
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 10px 20px;
+  border: 2px solid var(--verde); /* Borda para parecer botão */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.menu a:hover {
+  background-color: var(--verde);
+  color: #000; /* Inverte a cor ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de levante */
+}
+
+/* BOTÃO ESPECIAL DO WHATSAPP */
+.btn-whatsapp {
+  background-color: #25d366 !important;
+  border-color: #25d366 !important;
+  color: #fff !important;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128c7e !important;
+  border-color: #128c7e !important;
+}
+
+/* SEÇÃO SOBRE E FOTO */
 .sobre-content {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 40px;
+  padding: 60px 20px;
   flex-wrap: wrap;
-  margin-top: 40px;
-  margin-bottom: 50px;
 }
 
 .perfil-foto {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   border-radius: 50% !important; /* Força a foto a ficar redonda */
   object-fit: cover;
-  border: 4px solid var(--verde);
-  flex-shrink: 0;
+  border: 5px solid var(--verde);
+  box-shadow: 0 0 25px rgba(0, 255, 127, 0.3);
 }
 
 .curriculo-texto {
   text-align: left;
-  max-width: 550px;
+  max-width: 600px;
 }
 
 .nome-secao {
   color: var(--verde);
-  margin-top: 20px;
+  margin-top: 25px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #222;
+  padding-bottom: 5px;
 }
 
-/* Organização dos botões (PDF-GRID) */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+li::before {
+  content: "•";
+  color: var(--verde);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* GRID DE CARDS E BOTÕES DE PDF */
+.lista-projetos {
+  padding: 20px;
+}
+
+.card {
+  background: var(--fundo-card);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  border: 1px solid #222;
+}
+
 .pdf-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
 
 .btn-pdf {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
   border: 1px solid var(--verde);
-  color: var(--verde);
+  color: #fff;
+  padding: 15px;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  background: rgba(0, 255, 127, 0.05);
   transition: 0.3s;
 }
 
@@ -71,19 +163,10 @@ body {
   color: #000;
 }
 
-.card {
-  background: #111;
-  padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  border: 1px solid #222;
-}
-
-ul {
-  list-style-type: "- ";
-  padding-left: 20px;
-}
-
-li::marker {
-  color: var(--verde);
+footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid #222;
+  color: #888;
+  font-size: 0.9rem;
 }
