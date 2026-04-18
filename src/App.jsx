@@ -28,7 +28,7 @@ function App() {
         { nome: "O impacto do TDAH na vida adulta", link: "https://periodicorease.pro.br/rease/article/view/15094" },
         { nome: "Ambiente escolar capacitista e TEA", link: "https://ojs.revistacontemporanea.com/ojs/index.php/home/article/view/7378" },
         { nome: "Exclusão docente e inclusão", link: "https://ojs.revistacontemporanea.com/ojs/index.php/home/article/view/7314" },
-        { nome: "Desafios da inclusão escolar - TEA", link: "https://ojs.revistacontemporanea.com/ojs/index.php/home/article/view/5789" },
+        { nome: "Desafios da inclusão escolar - TEA", link: "https://ojs.revistacontemporanea.com/ojs/index.php/home/article/view/5789" }
       ] 
     }
   ];
@@ -68,14 +68,13 @@ function App() {
 
             <h3 className="nome-secao">Grupos de estudo:</h3>
             <ul>
-                <li>Integrante do Núcleo de Estudos e Pesquisas em Psicologia do Desenvolvimento e Intervenções Humanas (NEPEX PSIDIHN).
+                <li>Integrante do Núcleo de Estudos e Pesquisas em Psicologia do Desenvolvimento e Intervenções Humanas (NEPEX PSIDIHN).</li>
             </ul>
 
             <h3 className="nome-secao">Disciplinas ministradas nas áreas:</h3>
             <ul>
-                <li>Psicopatologia, Processos Grupais, Processos Psicológicos Básicos, Investigação Científica, Análise do Comportamento, Supervisão Clínica em Análise do Comportamento e Educação.
+                <li>Psicopatologia, Processos Grupais, Processos Psicológicos Básicos, Investigação Científica, Análise do Comportamento, Supervisão Clínica em Análise do Comportamento e Educação.</li>
             </ul>
-           
           </div>
         </div>
       </section>
