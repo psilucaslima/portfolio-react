@@ -66,7 +66,7 @@ function App() {
                   <li>Bacharel, Licenciado e Formado em Psicologia (UESPI).</li>
                   <li>Mestre em Ciências do Comportamento (UnB).</li>
                   <li>Especialista em Psicopedagogia Clínica e Institucional.</li>
-                  <li>Graduando em Sistemas para Internet (UESPI) e Pedagoga (Unifahe).</li>
+                  <li>Graduando em Sistemas para Internet (UESPI) e Pedagoga (Unifahe) ok.</li>
                 </ul>
               </div>
               <div className="cv-bloco">
