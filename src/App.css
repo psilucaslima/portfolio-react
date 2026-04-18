@@ -13,9 +13,10 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 
-/* FOTO E CURRÍCULO LADO A LADO */
+/* Foto e Texto lado a lado */
 .sobre-content {
   display: flex;
   justify-content: center;
@@ -23,16 +24,15 @@ body {
   gap: 40px;
   flex-wrap: wrap;
   margin-top: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .perfil-foto {
-  width: 180px;         /* Tamanho da foto */
-  height: 180px;        /* Altura igual à largura */
-  border-radius: 50%;   /* Deixa redonda */
-  object-fit: cover;    /* Não distorce a imagem */
+  width: 180px;
+  height: 180px;
+  border-radius: 50% !important; /* Força a foto a ficar redonda */
+  object-fit: cover;
   border: 4px solid var(--verde);
-  box-shadow: 0 0 20px rgba(0, 255, 127, 0.2);
   flex-shrink: 0;
 }
 
@@ -46,11 +46,11 @@ body {
   margin-top: 20px;
 }
 
-/* ORGANIZAÇÃO DOS BOTÕES EM COLUNAS */
+/* Organização dos botões (PDF-GRID) */
 .pdf-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
+  gap: 15px;
   margin-top: 20px;
 }
 
@@ -62,7 +62,7 @@ body {
   border: 1px solid var(--verde);
   color: var(--verde);
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: 0.3s;
 }
 
@@ -73,7 +73,17 @@ body {
 
 .card {
   background: #111;
-  padding: 20px;
+  padding: 25px;
   border-radius: 12px;
   margin-bottom: 30px;
+  border: 1px solid #222;
+}
+
+ul {
+  list-style-type: "- ";
+  padding-left: 20px;
+}
+
+li::marker {
+  color: var(--verde);
 }
