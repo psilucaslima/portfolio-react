@@ -3,29 +3,69 @@
 }
 
 body {
-  background-color: #000;
-  color: #fff;
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
 }
 
 .App {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px;
+}
+
+header h1 {
   text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 40px;
 }
 
-h2, h3 { color: var(--verde); }
+/* Layout do Sobre */
+.sobre-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
 
-.formacao ul {
-  display: inline-block;
+.perfil-foto {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--verde);
+  box-shadow: 0 0 15px rgba(0, 255, 127, 0.3);
+}
+
+.curriculo-texto {
   text-align: left;
-  list-style-type: "- ";
+  max-width: 550px;
 }
 
-.formacao li::marker { color: var(--verde); }
+.nome-secao {
+  color: var(--verde);
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
 
+ul {
+  list-style-type: "- ";
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+  color: #ddd;
+}
+
+li::marker {
+  color: var(--verde);
+}
+
+/* Estilo dos Projetos */
 .card {
   background: #111;
   padding: 25px;
@@ -34,59 +74,48 @@ h2, h3 { color: var(--verde); }
   border: 1px solid #222;
 }
 
-.grid-botoes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.btn-link {
-  padding: 12px;
-  border: 1px solid var(--verde);
+.card h3 {
   color: var(--verde);
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 13px;
-  transition: 0.3s;
+  text-align: center;
 }
 
-.btn-link:hover {
-  background: var(--verde);
-  color: #000;
+.card p {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 20px;
 }
 
-/* Organiza os botões em colunas (grelha) */
+/* A GRELHA DOS BOTÕES */
 .pdf-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
-  margin-top: 15px;
 }
 
-/* Estilo individual dos botões */
 .btn-pdf {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
   border: 1px solid var(--verde);
   color: var(--verde);
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 14px;
-  text-align: center;
   transition: 0.3s;
-  background: transparent;
+  text-align: center;
 }
 
 .btn-pdf:hover {
   background: var(--verde);
   color: #000;
+  font-weight: bold;
 }
 
-/* Garante que os cards ocupem o espaço correto */
-.card {
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px;
+  border-top: 1px solid #222;
+  color: #666;
 }
