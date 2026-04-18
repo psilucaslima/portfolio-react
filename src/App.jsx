@@ -5,9 +5,7 @@ function App() {
     {
       titulo: "Psicopedagogia na Escola",
       descricao: "O trabalho do psicopedagogo rumo ao avançado.",
-      arquivos: [
-        { nome: "Giroteca: ferramenta inovadora de incentivo à leitura", link: "documentos/Giroteca.pdf" }
-      ]
+      arquivos: [{ nome: "Giroteca: ferramenta inovadora de incentivo à leitura", link: "documentos/Giroteca.pdf" }]
     },
     {
       titulo: "Atividade de Extensão em Psicologia",
@@ -27,7 +25,7 @@ function App() {
     },
     {
       titulo: "Artigos publicados",
-      descricao: "Estes são alguns dos artigos que publiquei ao longo da minha trajetória acadêmica",
+      descricao: "Produção científica em periódicos e congressos.",
       arquivos: [ 
         { nome: "Effects of variability requirements", link: "https://onlinelibrary.wiley.com/doi/abs/10.1002/jeab.798"},
         { nome: "Efeito do Seguro Automotivo", link: "https://rbtcc.com.br/RBTCC/article/view/1207" },
@@ -42,14 +40,19 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1>Psicólogo e Professor Me. Lucas Lima Ribeiro</h1>
+      <header className="header-nav">
+        <h1> Me. Lucas Lima Ribeiro (Psicólogo|Professor)</h1>
+        <nav className="menu">
+          <a href="#sobre">Sobre</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#artigos">Artigos</a>
+          <a href="https://wa.me/5586999286646" target="_blank" rel="noreferrer" className="btn-whatsapp">WhatsApp</a>
+        </nav>
       </header>
 
-      <section className="container">
+      <section className="container" id="sobre">
         <div className="sobre-content">
           <img src="/lucasminhafoto.jpeg" alt="Foto de Lucas Lima" className="perfil-foto" />
-
           <div className="curriculo-texto">
             <h2>Currículo</h2>
             <h3 className="nome-secao">Formação:</h3>
@@ -64,6 +67,7 @@ function App() {
             <ul>
                 <li>Psicopedagogo na Secretaria Municipal de Educação de Teresina (SEMEC).</li>
                 <li>Professor Temporário na UESPI e Professor na FAESPI.</li>
+                <li>Professor Psicólogo (CRP21/04438).</li>
             </ul>
 
             <h3 className="nome-secao">Experiência:</h3>
@@ -86,10 +90,10 @@ function App() {
         </div>
       </section>
 
-      <section className="container">
+      <section className="container" id="portfolio">
         <h2>Portfólio de Projetos e Extensão</h2>
         <div className="lista-projetos">
-          {projetos.map((projeto, index) => (
+          {projetos.slice(0, 2).map((projeto, index) => (
             <div key={index} className="card">
               <h3>{projeto.titulo}</h3>
               <p>{projeto.descricao}</p>
@@ -105,8 +109,24 @@ function App() {
         </div>
       </section>
 
+      <section className="container" id="artigos">
+        <h2>Artigos Científicos</h2>
+        <div className="lista-projetos">
+          <div className="card">
+            <p>Acesse minhas publicações acadêmicas:</p>
+            <div className="pdf-grid">
+              {projetos[2].arquivos.map((arq, idx) => (
+                <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="btn-pdf">
+                  {arq.nome}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer>
-         <p>© 2026 - Me. Lucas Lima Ribeiro</p>
+         <p>© 2026 - Me. Lucas Lima Ribeiro | Psicólogo e Professor</p>
          <p>Psicólogo (CRP21/04438), Psicopedagogo e Professor</p>
       </footer>
     </div>
