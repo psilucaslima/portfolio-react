@@ -40,31 +40,28 @@ function App() {
 
   return (
     <div className="App">
-      <header className="navbar">
-        <div className="nav-wrapper">
+      <header className="navbar-fix">
+        <div className="nav-container">
           <h1>Me. Lucas Lima Ribeiro</h1>
-          <nav className="menu-topo">
-            <a href="#sobre">Sobre</a>
-            <a href="#portfolio">Portfólio</a>
+          <nav className="nav-btns">
+            <a href="#sobre" className="btn-nav">SOBRE</a>
+            <a href="#portfolio" className="btn-nav">PORTFÓLIO</a>
+            <a href="https://wa.me/5586999286646" target="_blank" rel="noreferrer" className="btn-nav zap">WHATSAPP</a>
           </nav>
         </div>
       </header>
 
-      <a href="https://wa.me/5586999286646" target="_blank" rel="noreferrer" className="zap-flutuante">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-      </a>
-
-      {/* CURRÍCULO COMPLETO */}
-      <section className="secao-site bg-preto-suave" id="sobre">
-        <div className="layout-horizontal">
-          <div className="foto-box">
-            <img src="/lucasminhafoto.jpeg" alt="Lucas Lima Ribeiro" className="minha-foto" />
+      {/* CURRÍCULO INTEGRAL */}
+      <section className="secao-master bg-dark" id="sobre">
+        <div className="grid-sobre">
+          <div className="foto-area">
+            <img src="/lucasminhafoto.jpeg" alt="Lucas Lima Ribeiro" className="foto-perfil" />
           </div>
-          <div className="conteudo-box">
-            <h2 className="cor-verde">Currículo Profissional</h2>
-            <div className="grade-curriculo">
-              <div className="item-cv">
-                <p className="rotulo">Formação:</p>
+          <div className="texto-area">
+            <h2 className="verde-destaque">Currículo Profissional</h2>
+            <div className="cv-info-grid">
+              <div className="cv-bloco">
+                <h3>Formação:</h3>
                 <ul>
                   <li>Bacharel, Licenciado e Formado em Psicologia (UESPI).</li>
                   <li>Mestre em Ciências do Comportamento (UnB).</li>
@@ -72,73 +69,57 @@ function App() {
                   <li>Graduando em Sistemas para Internet (UESPI) e Pedagoga (Unifahe).</li>
                 </ul>
               </div>
-              <div className="item-cv">
-                <p className="rotulo">Atuação:</p>
+              <div className="cv-bloco">
+                <h3>Atuação:</h3>
                 <ul>
                   <li>Psicopedagogo na Secretaria Municipal de Educação de Teresina (SEMEC).</li>
                   <li>Professor Temporário na UESPI e Professor na FAESPI.</li>
                   <li>Professor Psicólogo (CRP21/04438).</li>
                 </ul>
               </div>
-              <div className="item-cv">
-                <p className="rotulo">Experiência:</p>
-                <ul>
-                  <li>Ex-Coordenador do Curso de Psicologia (FAESPI).</li>
-                  <li>Integrante do Núcleo de Acessibilidade da UEMA.</li>
-                  <li>Experiência como Acompanhante Terapêutico (AT).</li>
-                </ul>
-              </div>
-              <div className="item-cv">
-                <p className="rotulo">Grupos de estudo:</p>
-                <ul>
-                  <li>Integrante do NEPEX PSIDIHN.</li>
-                </ul>
-              </div>
             </div>
-            <div className="disciplinas-box">
-              <p className="rotulo">Disciplinas ministradas nas áreas:</p>
-              <p className="texto-simples">Psicopatologia, Processos Grupais, Processos Psicológicos Básicos, Investigação Científica, Análise do Comportamento, Supervisão Clínica em Análise do Comportamento e Educação.</p>
+            <div className="cv-bloco-largo">
+              <h3>Experiência & Grupos:</h3>
+              <p>Ex-Coordenador do Curso de Psicologia (FAESPI). Integrante do Núcleo de Acessibilidade da UEMA. Experiência como Acompanhante Terapêutico (AT). Integrante do NEPEX PSIDIHN.</p>
+              <h3>Disciplinas:</h3>
+              <p>Psicopatologia, Processos Grupais, Processos Psicológicos Básicos, Análise do Comportamento e Educação.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* PORTFÓLIO LADO A LADO */}
-      <section className="secao-site" id="portfolio">
-        <div className="lado-a-lado">
-          {/* COLUNA EXTENSÃO */}
-          <div className="coluna">
-            <h2 className="cor-verde">Atividade de Extensão em Psicologia</h2>
-            <p className="desc-apoio">{projetos[1].descricao}</p>
-            <div className="quadrinhos-extensao">
+      <section className="secao-master" id="portfolio">
+        <div className="flex-lado-a-lado">
+          {/* EXTENSÃO */}
+          <div className="coluna-portfolio">
+            <h2 className="verde-destaque">Atividade de Extensão</h2>
+            <div className="grade-quadrinhos">
               {projetos[1].arquivos.map((arq, idx) => (
-                <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="card-pequeno">
-                  {arq.nome}
-                </a>
+                <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="quadrinho-link">{arq.nome}</a>
               ))}
             </div>
           </div>
 
-          {/* COLUNA ARTIGOS */}
-          <div className="coluna">
-            <h2 className="cor-verde">Artigos Publicados</h2>
-            <p className="desc-apoio">{projetos[2].descricao}</p>
-            <div className="lista-artigos-vertical">
+          {/* ARTIGOS */}
+          <div className="coluna-portfolio">
+            <h2 className="verde-destaque">Artigos publicados</h2>
+            <div className="lista-artigos">
               {projetos[2].arquivos.map((arq, idx) => (
-                <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="card-artigo">
-                  <span className="icone">📄</span> {arq.nome}
+                <a key={idx} href={arq.link} target="_blank" rel="noreferrer" className="artigo-box">
+                  <span>📄</span> {arq.nome}
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        {/* GIROTECA POR ÚLTIMO - CENTRALIZADO E LARGO */}
-        <div className="giroteca-secao">
-          <h2 className="cor-verde central">Psicopedagogia na Escola</h2>
-          <div className="card-giroteca-final">
+        {/* GIROTECA POR ÚLTIMO */}
+        <div className="giroteca-footer">
+          <h2 className="verde-destaque central">Psicopedagogia na Escola</h2>
+          <div className="bloco-giroteca">
             <p>{projetos[0].descricao}</p>
-            <a href={projetos[0].arquivos[0].link} target="_blank" rel="noreferrer" className="botao-giroteca">
+            <a href={projetos[0].arquivos[0].link} target="_blank" rel="noreferrer" className="btn-giroteca">
               {projetos[0].arquivos[0].nome}
             </a>
           </div>
