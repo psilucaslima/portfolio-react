@@ -38,17 +38,26 @@ function App() {
     }
   ];
 
-  return (
+return (
     <div className="App">
       <header className="header-nav">
-        <h1> Me. Lucas Lima Ribeiro (Psicólogo|Professor)</h1>
+        <h1>Me. Lucas Lima Ribeiro (Psicólogo|Professor)</h1>
         <nav className="menu">
-          <a href="#sobre">Sobre</a>
-          <a href="#portfolio">Portfólio</a>
-          <a href="#artigos">Artigos</a>
-          <a href="https://wa.me/5586999286646" target="_blank" rel="noreferrer" className="btn-whatsapp">WhatsApp</a>
+          <a href="#sobre">SOBRE</a>
+          <a href="#portfolio">PORTFÓLIO</a>
+          <a href="#artigos">ARTIGOS</a>
         </nav>
       </header>
+
+      {/* Botão Flutuante do WhatsApp */}
+      <a 
+        href="https://wa.me/5586999286646" 
+        target="_blank" 
+        rel="noreferrer" 
+        className="whatsapp-float"
+      >
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      </a>
 
       <section className="container" id="sobre">
         <div className="sobre-content">
