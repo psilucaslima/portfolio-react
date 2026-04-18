@@ -3,6 +3,13 @@ import './App.css'
 function App() {
   const projetos = [
     {
+      titulo: "Psicopedagogia na Escola",
+      descricao: "O trabalho do psicopedagogo rumo ao avançado.",
+      arquivos: [
+        { nome: "Giroteca: ferramenta inovadora de incentivo à leitura", link: "documentos/Giroteca.pdf" }
+      ]
+    },
+    {
       titulo: "Atividade de Extensão em Psicologia",
       descricao: "Relatórios de ações comunitárias coordenadas em saúde mental e prevenção.",
       arquivos: [
