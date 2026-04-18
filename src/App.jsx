@@ -41,12 +41,10 @@ function App() {
 
       <section className="container">
         <div className="sobre-content">
-          {/* A imagem deve estar dentro da pasta public */}
           <img src="/lucasminhafoto.jpeg" alt="Foto de Lucas Lima" className="perfil-foto" />
 
           <div className="curriculo-texto">
             <h2>Currículo</h2>
-            
             <h3 className="nome-secao">Formação:</h3>
             <ul>
                 <li>Bacharel, Licenciado e Formado em Psicologia (UESPI).</li>
