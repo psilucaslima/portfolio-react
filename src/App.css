@@ -1,0 +1,35 @@
+:root {
+  --verde-cana: #adff2f;
+  --preto: #000000;
+  --branco: #ffffff;
+}
+
+body {
+  background-color: var(--preto);
+  color: var(--branco);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: var(--verde-cana);
+}
+
+.card {
+  border: 1px solid var(--verde-cana);
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+.btn-pdf {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--verde-cana);
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
