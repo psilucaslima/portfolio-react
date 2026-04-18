@@ -1,35 +1,57 @@
 :root {
-  --verde-cana: #adff2f;
-  --preto: #000000;
-  --branco: #ffffff;
+  --verde: #00FF7F;
 }
 
 body {
-  background-color: var(--preto);
-  color: var(--branco);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: #fff;
   margin: 0;
-  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-h1, h2 {
-  color: var(--verde-cana);
+.App {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
 }
+
+h2, h3 { color: var(--verde); }
+
+.formacao ul {
+  display: inline-block;
+  text-align: left;
+  list-style-type: "- ";
+}
+
+.formacao li::marker { color: var(--verde); }
 
 .card {
-  border: 1px solid var(--verde-cana);
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  border: 1px solid #222;
 }
 
-.btn-pdf {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: var(--verde-cana);
-  color: black;
+.grid-botoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-link {
+  padding: 12px;
+  border: 1px solid var(--verde);
+  color: var(--verde);
   text-decoration: none;
-  font-weight: bold;
   border-radius: 5px;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.btn-link:hover {
+  background: var(--verde);
+  color: #000;
 }
