@@ -65,6 +65,17 @@ function App() {
                 <li>Integrante do Núcleo de Acessibilidade da UEMA.</li>
                 <li>Experiência como Acompanhante Terapêutico (AT).</li>
             </ul>
+
+            <h3 className="nome-secao">Grupos de estudo:</h3>
+            <ul>
+                <li>Integrante do Núcleo de Estudos e Pesquisas em Psicologia do Desenvolvimento e Intervenções Humanas (NEPEX PSIDIHN).
+            </ul>
+
+            <h3 className="nome-secao">Disciplinas ministradas nas áreas:</h3>
+            <ul>
+                <li>Psicopatologia, Processos Grupais, Processos Psicológicos Básicos, Investigação Científica, Análise do Comportamento, Supervisão Clínica em Análise do Comportamento e Educação.
+            </ul>
+           
           </div>
         </div>
       </section>
