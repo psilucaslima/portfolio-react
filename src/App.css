@@ -1,96 +1,77 @@
 :root {
-  --green: #00FF7F;
-  --bg: #0a0a0a;
-  --bg-alt: #121212;
-  --text: #ffffff;
-  --text-dim: #b0b0b0;
+  --primary: #00FF7F;
+  --bg-dark: #050505;
+  --bg-card: #111111;
+  --text-main: #ffffff;
+  --text-muted: #b0b0b0;
 }
 
-body {
-  margin: 0; background-color: var(--bg); color: var(--text);
-  font-family: 'Segoe UI', sans-serif; overflow-x: hidden;
-}
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { margin: 0; background-color: var(--bg-dark); color: var(--text-main); font-family: sans-serif; }
 
-/* NAVBAR EXPANDIDA */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* NAVBAR */
 .navbar {
   position: sticky; top: 0; background: rgba(0,0,0,0.95);
-  border-bottom: 2px solid var(--green); z-index: 1000; padding: 15px 0;
+  border-bottom: 2px solid var(--primary); z-index: 1000; padding: 15px 0;
 }
-.nav-container-full {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 0 5%; /* Expandido para as bordas */
+.nav-container {
+  display: flex; justify-content: space-between; align-items: center; padding: 0 40px;
 }
-.nav-menu { display: flex; gap: 20px; }
+.navbar h1 { font-size: 1.1rem; margin: 0; color: white; }
+.nav-menu { display: flex; gap: 15px; }
 .nav-menu a {
-  text-decoration: none; color: var(--green); font-weight: bold;
-  padding: 8px 20px; border: 1px solid var(--green); border-radius: 4px; transition: 0.3s;
+  text-decoration: none; color: var(--primary); font-size: 0.8rem; font-weight: bold;
+  padding: 8px 16px; border: 1px solid var(--primary); border-radius: 6px; transition: 0.3s;
 }
-.nav-menu a:hover { background: var(--green); color: #000; }
+.nav-menu a:hover { background: var(--primary); color: #000; }
 
-/* SEÇÕES QUE OCUPAM A TELA */
-.section-expanded { padding: 80px 5%; border-bottom: 1px solid #222; }
-.bg-darker { background-color: #050505; }
-.content-wrapper { width: 100%; margin: 0 auto; }
-
-/* LAYOUT DO TOPO */
-.hero-layout { display: flex; gap: 60px; align-items: flex-start; }
+/* HERO SECTION */
+.hero-section { padding: 60px 0; }
+.hero-content {
+  display: flex; gap: 50px; align-items: flex-start; justify-content: center; flex-wrap: wrap;
+}
 .hero-img {
-  width: 280px; height: 280px; border-radius: 20px;
-  border: 4px solid var(--green); object-fit: cover;
+  width: 250px; height: 250px; border-radius: 50% !important; object-fit: cover;
+  border: 4px solid var(--primary); box-shadow: 0 0 20px rgba(0,255,127,0.2);
 }
-.hero-info-side { flex: 1; }
-.cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+.hero-text { flex: 1; min-width: 320px; max-width: 650px; }
+.section-title { font-size: 1.8rem; color: var(--primary); margin-bottom: 25px; }
+.section-title.central { text-align: center; margin-bottom: 40px; }
 
-.title-green { color: var(--green); text-transform: uppercase; margin-bottom: 20px; }
-.title-green.central { text-align: center; }
+.cv-block { margin-bottom: 20px; }
+.cv-block h3 { font-size: 0.85rem; color: var(--primary); margin-bottom: 8px; font-weight: bold; }
+.cv-block ul { list-style: none; padding: 0; }
+.cv-block li { margin-bottom: 6px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
 
-.cv-item h3 { font-size: 0.9rem; color: var(--green); margin-bottom: 10px; opacity: 0.8; }
-.cv-item ul { list-style: none; padding: 0; margin: 0; }
-.cv-item li { color: var(--text-dim); margin-bottom: 8px; font-size: 0.95rem; line-height: 1.4; }
-.disciplinas-text { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; text-align: justify; }
+/* PROJECTS GRID */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+.project-card { background: var(--bg-card); padding: 30px; border-radius: 15px; border: 1px solid #222; }
+.project-card h3 { color: var(--primary); margin-bottom: 12px; }
+.project-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px; }
 
-/* PSICOPEDAGOGIA DESTAQUE */
-.full-width-card {
-  background: var(--bg-alt); padding: 40px; border-radius: 15px;
-  text-align: center; margin-bottom: 60px; border: 1px solid #222;
+.btn-action {
+  display: block; width: 100%; padding: 12px; text-align: center; border: 1px solid var(--primary);
+  color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: bold; margin-bottom: 10px; transition: 0.3s;
 }
+.btn-action:hover { background: var(--primary); color: #000; }
 
-/* LADO A LADO: EXTENSÃO E ARTIGOS */
-.split-layout { display: flex; gap: 40px; }
-.split-column { flex: 1; min-width: 300px; }
-
-.extension-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.extension-item {
-  background: transparent; border: 1px solid #333; color: var(--text-dim);
-  padding: 12px; text-decoration: none; border-radius: 6px; font-size: 0.85rem; transition: 0.3s;
+/* ARTICLES */
+.articles-list { display: flex; flex-direction: column; gap: 12px; max-width: 800px; margin: 0 auto; }
+.article-item {
+  display: flex; align-items: center; gap: 15px; padding: 15px; background: #111;
+  border-radius: 10px; text-decoration: none; border: 1px solid #222; transition: 0.3s;
 }
-.extension-item:hover { border-color: var(--green); color: var(--green); }
-
-.articles-column { display: flex; flex-direction: column; gap: 12px; }
-.article-box {
-  background: #1a1a1a; padding: 15px; border-radius: 8px; text-decoration: none;
-  color: white; border-left: 4px solid var(--green); transition: 0.3s;
-}
-.article-box:hover { background: #222; transform: translateX(10px); }
-
-.btn-main {
-  display: inline-block; padding: 15px 30px; background: var(--green);
-  color: #000; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 20px;
-}
+.article-item:hover { border-color: var(--primary); transform: translateX(10px); }
+.article-name { color: white; font-size: 0.95rem; }
 
 /* WHATSAPP FLOAT */
 .whatsapp-link {
-  position: fixed; bottom: 30px; right: 30px; background: #25d366;
-  width: 60px; height: 60px; border-radius: 50%; display: flex;
-  align-items: center; justify-content: center; z-index: 2000;
+  position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2000; transition: 0.3s;
 }
 .whatsapp-link img { width: 35px; }
+.whatsapp-link:hover { transform: scale(1.1); }
 
-footer { padding: 40px; text-align: center; border-top: 1px solid #222; color: #555; }
-
-/* RESPONSIVIDADE */
-@media (max-width: 1000px) {
-  .hero-layout, .split-layout { flex-direction: column; }
-  .cv-grid, .extension-list { grid-template-columns: 1fr; }
-  .hero-image-side { width: 100%; text-align: center; }
-}
+footer { padding: 50px 0; text-align: center; opacity: 0.6; font-size: 0.8rem; }
