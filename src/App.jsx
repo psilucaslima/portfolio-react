@@ -91,27 +91,13 @@ function App() {
                 <li>Experiência como Acompanhante Terapêutico (AT).</li>
               </ul>
             </div>
-
-            <div className="cv-block">
-              <h3>GRUPOS DE ESTUDO:</h3>
-              <ul>
-                <li>Integrante do Núcleo de Estudos e Pesquisas em Psicologia do Desenvolvimento e Intervenções Humanas (NEPEX PSIDIHN).</li>
-              </ul>
-            </div>
-
-            <div className="cv-block">
-              <h3>DISCIPLINAS MINISTRADAS NAS ÁREAS:</h3>
-              <ul>
-                <li>Psicopatologia, Processos Grupais, Processos Psicológicos Básicos, Investigação Científica, Análise do Comportamento, Supervisão Clínica em Análise do Comportamento e Educação.</li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
 
       <section className="portfolio-section" id="portfolio">
         <div className="container">
-          <h2 className="section-title central">Portfólio de Projetos e Extensão</h2>
+          <h2 className="section-title central">Projetos & Extensão</h2>
           <div className="projects-grid">
             {projetos.slice(0, 2).map((proj, i) => (
               <div key={i} className="project-card">
@@ -147,7 +133,7 @@ function App() {
       <footer>
         <div className="container">
           <p>© 2026 - Me. Lucas Lima Ribeiro</p>
-          <p className="footer-sub">Psicólogo (CRP21/04438), Psicopedagogo e Professor</p>
+          <p className="footer-sub">Psicólogo, Psicopedagogo e Professor</p>
         </div>
       </footer>
     </div>
